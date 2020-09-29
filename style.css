@@ -1,12 +1,45 @@
 body {
-  background-color: black;
+  margin: 0;
+  background-color: #111;
   color: white;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.original__movies {
-  overflow-x: scroll;
-  white-space: nowrap;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.original__movies,
+.movies__container {
+  padding-left: 40px;
+}
+
+.original__movies img {
+  margin-right: 10px;
+  height: 250px;
+  width: auto;
+}
+
+.movies__container img {
+  margin-right: 10px;
+  width: 200px;
+}
+
+.logo img {
+  width: 120px;
+}
+.profile img {
+  width: 40px;
 }
 
 img {
@@ -33,6 +66,10 @@ img {
   justify-content: center;
 }
 
+.netflixOriginals h2,
+.movies__header h2 {
+  padding-left: 30px;
+}
 .featured h2 {
   font-size: 50px;
   margin: 0;
@@ -59,12 +96,11 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  /* background: rgb(18,18,24); */
   background: linear-gradient(
-    0deg,
-    rgba(18, 18, 24, 1) 0%,
-    rgba(95, 95, 102, 0.18671218487394958) 54%
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
   );
 }
 
