@@ -22,6 +22,8 @@ header {
 .original__movies,
 .movies__container {
   padding-left: 40px;
+  display: flex;
+  overflow-x: auto;
 }
 
 .original__movies img {

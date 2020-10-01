@@ -1,11 +1,23 @@
 window.onload = () => {
-  fetchMovies();
+  fetchMovies(
+    "https://api.themoviedb.org/3/discover/tv?api_key=bb3371dce253d99f5d38531c44cefec8",
+    ".original__movies",
+    "poster_path"
+  );
+  fetchMovies(
+    "https://api.themoviedb.org/3/discover/movie?api_key=bb3371dce253d99f5d38531c44cefec8",
+    "#trending__now",
+    "backdrop_path"
+  );
+  fetchMovies(
+    "https://api.themoviedb.org/3/discover/tv?api_key=bb3371dce253d99f5d38531c44cefec8",
+    "#top__rated",
+    "backdrop_path"
+  );
 };
 
-function fetchMovies() {
-  fetch(
-    "https://api.themoviedb.org/3/discover/tv?api_key=bb3371dce253d99f5d38531c44cefec8"
-  )
+function fetchMovies(url, selector, img) {
+  fetch(url)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -15,7 +27,7 @@ function fetchMovies() {
     })
     .then((data) => {
       console.log(data);
-      addMovies(data);
+      addMovies(data, selector, img);
     })
     .catch((error) => {
       console.log(error);
@@ -23,24 +35,12 @@ function fetchMovies() {
 }
 
 // Add movies t o the front end
-function addMovies(movies) {
+function addMovies(movies, selector, img) {
   //Add img element to the original__movies element
-  var moviesEl = document.querySelector(".original__movies");
+  var moviesEl = document.querySelector(selector);
 
   for (var movie of movies.results) {
-    var image = `<img src='https://image.tmdb.org/t/p/original/${movie.poster_path}'>`;
+    var image = `<img src='https://image.tmdb.org/t/p/original/${movie[img]}'>`;
     moviesEl.innerHTML += image;
   }
-
-  // var moviesContainer = document.querySelector(".movies__container");
-  // console.log(moviesContainer);
-  // for (var i = 0; i < 8; i++) {
-  //   moviesContainer.innerHTML +=
-  //     "<img src='https://image.tmdb.org/t/p/original//wzJRB4MKi3yK138bJyuL9nx47y6.jpg'/>";
-  // }
-  // var moviesContainer1 = document.querySelector(".movies__container");
-  // for (var i = 0; i < 10; i++) {
-  //   moviesContainer1.innerHTML +=
-  //     "<img src='https://image.tmdb.org/t/p/original//wzJRB4MKi3yK138bJyuL9nx47y6.jpg'/>";
-  // }
 }
