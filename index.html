@@ -24,14 +24,14 @@
     </header>
     <main>
       <div class="featured">
-        <h2>Title</h2>
+        <h2 id="featured__title">Title</h2>
         <div class="featured__buttons">
           <button class="button__play"><i class="fas fa-play"></i>Play</button>
           <button>My List</button>
         </div>
         <div class="featured__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique
-          magna magna, vit...
+          <p id="featured__overview">
+          </p>
         </div>
       </div>
       <div class="netflixOriginals">
@@ -63,19 +63,15 @@
     >
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"></h5>
-            <button
+          <div class="modal-body">
+            <!-- <button
               type="button"
               class="close"
               data-dismiss="modal"
               aria-label="Close"
             >
               <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="movie-container">
+            </button> -->
               <div class="trailer">
                 <span class="movieNotFound">Trailer Not Found</span>
                 <iframe
@@ -88,11 +84,18 @@
                 ></iframe>
               </div>
               <div class="movie-info">
-                <span id="movie-title"></span>
-                <span id="sipnosis"></span>
-                <span id="popularity"></span>
+                <div class="title-section">
+                  <h5 class="modal-title"></h5>
+                  <span id="popularity"></span>
+                </div>
+                <div class="description-section">
+                  <p id="sipnosis"></p>
+                  <div class="more-info">
+                    <label for="" class="genre-label">Genres: </label>
+                    <p id="genre"></p>
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
