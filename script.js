@@ -170,7 +170,7 @@ const  showMoviesBasedOnGenre = (genreName, movies) => {
   let genreEl = document.createElement("div");
   genreEl.classList.add("movies__header");
   genreEl.innerHTML = `
-      <h2>${genreName}</h2>
+      <h6>${genreName}</h6>
   `;
   let moviesEl = document.createElement("div");
   moviesEl.classList.add("movies__container");
