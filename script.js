@@ -43,6 +43,11 @@ const setTrailer = (trailers) => {
   }
 };
 
+//on Close modal set src iframe to stop video playing
+$("#trailerModal").on('hidden.bs.modal', function (e) {
+  $("#trailerModal iframe").attr("src", $("#trailerModal iframe").attr("src"));
+});
+
 const setMovieInfo = (info) => {
   const modalTitle = document.getElementsByClassName("modal-title");
   const popularity = document.getElementById("popularity");
