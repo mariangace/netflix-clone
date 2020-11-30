@@ -231,6 +231,5 @@ const  getTopRated = () => {
   fetchMovies(url, "#top_rated", "backdrop_path");
 }
 
-const featureMovie = () => {
 
-}
+
