@@ -69,6 +69,29 @@ img {
   width: 100px;
 }
 
+.profile:hover .dropdown {
+  opacity: 1;
+}
+
+.profile {
+  position: relative;
+}
+
+.dropdown {
+  background-color: black;
+  padding: 8px;
+  border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100px;
+  opacity: 0;
+  margin-top: 3px;
+}
+
+.dropdown span {
+  cursor: pointer;
+}
 .featured {
   height: 400px;
   position: relative;

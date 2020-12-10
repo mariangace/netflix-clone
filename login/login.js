@@ -37,6 +37,8 @@ loginForm.addEventListener("submit", (e) => {
   })
   .then((response)=> {
     //loginForm.after("Success!");
+    //location.href = "../index.html";
+    localStorage.setItem('token', response.token)
     location.href = "../index.html";
   })
   console.log(payload);
