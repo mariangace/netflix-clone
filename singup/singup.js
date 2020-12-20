@@ -7,6 +7,7 @@ singupForm.addEventListener("submit", (e) => {
   //By default submit event will redirect to somewhere.
   e.preventDefault();
   let payload = { 
+    name:singupForm.name.value,
     email: singupForm.email.value,
     password: singupForm.password.value
   }  
@@ -34,8 +35,11 @@ singupForm.addEventListener("submit", (e) => {
   })
   .then((response)=> {
     //singupForm.after("Success!");
-    console.log('success!')
-    location.href = "../index.html";
+    console.log('success!',response)
+    //location.href = "../index.html";
+    location.href= `../login/login.html?existingEmail=${payload.email}&registered=true`
+  }).catch((error)=> {
+    location.href= `../login/login.html?existingEmail=${payload.email}`
   })
 })
 

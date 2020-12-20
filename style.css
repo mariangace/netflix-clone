@@ -69,24 +69,27 @@ img {
   width: 100px;
 }
 
-.profile:hover .dropdown {
-  opacity: 1;
+.profile:hover .dropdown-container {
+  display: block;
 }
 
 .profile {
   position: relative;
 }
 
-.dropdown {
-  background-color: black;
-  padding: 8px;
-  border-radius: 4px;
+.dropdown-container {
   position: absolute;
   top: 100%;
   right: 0;
+  padding-top: 3px;
+  display: none;
+}
+
+.dropdown {
+  background-color: black;
+  padding: 8px;
   width: 100px;
-  opacity: 0;
-  margin-top: 3px;
+  border-radius: 4px;
 }
 
 .dropdown span {

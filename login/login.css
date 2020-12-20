@@ -39,3 +39,7 @@ body {
 .singup a {
   color: white;
 }
+
+.registered-alert {
+  display: none;
+}

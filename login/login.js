@@ -3,10 +3,24 @@
 let loginForm = document.getElementById("loginForm")
 let apiurl = 'http://localhost:3000';
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const existingEmail = urlParams.get('existingEmail');
+const registered = urlParams.get('registered');
+console.log(registered);
+
+if(existingEmail){
+  loginForm.email.value = existingEmail;
+}
+
+if(registered){
+  document.querySelector('.registered-alert').style.display = "block";
+}
 loginForm.addEventListener("submit", (e) => {
   //By default submit event will redirect to somewhere.
   e.preventDefault();
-  let payload = { 
+  let payload = {
     email: loginForm.email.value,
     password: loginForm.password.value
   }  
@@ -40,26 +54,8 @@ loginForm.addEventListener("submit", (e) => {
     //location.href = "../index.html";
     localStorage.setItem('token', response.token)
     location.href = "../index.html";
+  }).catch((error)=> {
+    console.log('error happend');
   })
   console.log(payload);
 })
-
-// async function loginRequest(url = '', data = {}) {
-//     // Opciones por defecto estan marcadas con un *
-//     const response = await fetch(url, {
-//       method: 'POST', // *GET, POST, PUT, DELETE, etc.
-//       mode: 'cors', // no-cors, *cors, same-origin
-//       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-//       credentials: 'same-origin', // include, *same-origin, omit
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': '*/*',
-//         'Accept-Encoding':'gzip, deflate, br'
-//         // 'Content-Type': 'application/x-www-form-urlencoded',
-//       },
-//       redirect: 'follow', // manual, *follow, error
-//       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-//       body: JSON.stringify(data) // body data type must match "Content-Type" header
-//     });
-//     return response.json(); // parses JSON response into native JavaScript objects
-//   }
