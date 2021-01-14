@@ -4,9 +4,11 @@ window.onload = () => {
   getTrendingNow();
   getTopRated();
   getGenres();
+  getWhislist();
 };
 
 const api_key = "bb3371dce253d99f5d38531c44cefec8";
+let apiurl = 'http://localhost:3000';
 
 const getMovieTrailer = async(id) =>  {
   var url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`;
@@ -231,5 +233,25 @@ const  getTopRated = () => {
   fetchMovies(url, "#top_rated", "backdrop_path");
 }
 
-
+const getWhislist = () => {
+  //var url = `http:localhost:3000/whislist`;
+  fetch(apiurl+'/whislist',{
+    headers:{
+      Authorization:`${localStorage.getItem('token')}`
+    }
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("something went wrong");
+    }
+  })
+  .then((data)=> {
+    console.log(data);
+  })
+  .catch((error)=>{
+    logOut();
+    console.log(error);
+  })
+}
 
