@@ -9,7 +9,10 @@ window.onload = () => {
 };
 
 const api_key = "bb3371dce253d99f5d38531c44cefec8";
-let apiurl = process.env.url || 'http://localhost:3000';
+let apiurl = 'http://localhost:3000';
+if(location.href.indexOf('netlify') != -1){
+  apiurl = 'https://netflix-bc-api.herokuapp.com/'
+}
 
 const getMovieTrailer = async(id) =>  {
   var url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`;

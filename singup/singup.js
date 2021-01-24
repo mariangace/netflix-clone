@@ -1,7 +1,10 @@
 
 
 let singupForm = document.getElementById("singupForm")
-let apiurl = process.env.url || 'http://localhost:3000';
+let apiurl = 'http://localhost:3000';
+if(location.href.indexOf('netlify') != -1){
+  apiurl = 'https://netflix-bc-api.herokuapp.com/'
+}
 
 singupForm.addEventListener("submit", (e) => {
   //By default submit event will redirect to somewhere.
