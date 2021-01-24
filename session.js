@@ -1,9 +1,9 @@
 function checkIfLoggedIn(){
     const currentToken = localStorage.getItem('token');
     if(currentToken){
-        if(location.href.includes("login.html")
-            || location.href.includes("register.html")){
-            location.href = "../";
+        if(location.href.includes("/login.html")
+            || location.href.includes("/signup.html")){
+            location.href = "/";
         }
     } else {
         // If I am currently not logged in
