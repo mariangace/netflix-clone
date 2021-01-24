@@ -1,7 +1,7 @@
 
 
 let singupForm = document.getElementById("singupForm")
-let apiurl = 'http://localhost:3000';
+let apiurl = process.env.url || 'http://localhost:3000';
 
 singupForm.addEventListener("submit", (e) => {
   //By default submit event will redirect to somewhere.
