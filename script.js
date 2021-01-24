@@ -10,7 +10,7 @@ window.onload = () => {
 
 const api_key = "bb3371dce253d99f5d38531c44cefec8";
 let apiurl = 'http://localhost:3000';
-if(location.href.indexOf('netflix') != -1){
+if(location.href.indexOf('coding') != -1){
   apiurl = 'https://netflix-bc-api.herokuapp.com'
 }
 

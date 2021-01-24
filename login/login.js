@@ -2,7 +2,7 @@
 
 let loginForm = document.getElementById("loginForm")
 let apiurl = 'http://localhost:3000';
-if(location.href.indexOf('netflix') != -1){
+if(location.href.indexOf('coding') != -1){
   apiurl = 'https://netflix-bc-api.herokuapp.com'
 }
 
