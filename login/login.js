@@ -3,7 +3,7 @@
 let loginForm = document.getElementById("loginForm")
 let apiurl = 'http://localhost:3000';
 if(location.href.indexOf('netlify') != -1){
-  apiurl = 'https://netflix-bc-api.herokuapp.com/'
+  apiurl = 'https://netflix-bc-api.herokuapp.com'
 }
 
 const queryString = window.location.search;
