@@ -2,7 +2,7 @@
 
 let singupForm = document.getElementById("singupForm")
 let apiurl = 'http://localhost:3000';
-if(location.href.indexOf('netlify') != -1){
+if(location.href.indexOf('netflix') != -1){
   apiurl = 'https://netflix-bc-api.herokuapp.com'
 }
 
